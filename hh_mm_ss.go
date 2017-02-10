@@ -1,9 +1,9 @@
 package main
 
 import (
+	"gofmt"
 	"fmt"
 	"time"
-	"gofmt"
 )
 
 func main() {
