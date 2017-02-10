@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"gofmt"
 	"os"
 	"os/exec"
 	"time"
