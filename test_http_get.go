@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-type Repository struct {
+type Repository struct { //json to go
 	ArchiveURL       string      `json:"archive_url"`
 	AssigneesURL     string      `json:"assignees_url"`
 	BlobsURL         string      `json:"blobs_url"`
