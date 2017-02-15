@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func max_file(files *[]os.FileInfo) (max int) {
+func maxFile(files *[]os.FileInfo) (max int) {
 	max = 0
 	for _, file := range *files {
 		//fmt.Println(file.Size())
@@ -34,7 +34,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	max := max_file(&files)
+	max := maxFile(&files)
 	//    fmt.Println(max)
 	for _, file := range files {
 		fmt.Print(file.Mode().String(), " ")
