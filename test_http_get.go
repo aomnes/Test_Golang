@@ -1,11 +1,11 @@
 package main
 
 import (
-    "fmt"
-    "io/ioutil"
-    "net/http"
-    "os"
-    "encoding/json"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"os"
 )
 
 type Repository struct {
@@ -100,27 +100,27 @@ type Repository struct {
 }
 
 func main() {
-    resp, err := http.Get("https://api.github.com/repos/aomnes/ft_ls")
-    if err != nil {
-        fmt.Println(err)
-        os.Exit(1)
-    }
-    defer resp.Body.Close()
-    htmlData, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        fmt.Println(err)
-        os.Exit(1)
-    }
-//    fmt.Printf("%s\n", htmlData)
-    bytes := []byte(htmlData)
-    var repositories Repository
-    err = json.Unmarshal(bytes, &repositories)
-    if err != nil {
-        fmt.Println(err)
-        os.Exit(1)
-    }
-    fmt.Printf("Nom: %s\n", repositories.Name)
-    fmt.Printf("URL: %s\n", repositories.URL)
-    fmt.Printf("Login: %s\n", repositories.Owner.Login)
-    fmt.Printf("Clone: %s\n", repositories.CloneURL)
+	resp, err := http.Get("https://api.github.com/repos/aomnes/ft_ls")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	defer resp.Body.Close()
+	htmlData, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	//    fmt.Printf("%s\n", htmlData)
+	bytes := []byte(htmlData)
+	var repositories Repository
+	err = json.Unmarshal(bytes, &repositories)
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+	fmt.Printf("Nom: %s\n", repositories.Name)
+	fmt.Printf("URL: %s\n", repositories.URL)
+	fmt.Printf("Login: %s\n", repositories.Owner.Login)
+	fmt.Printf("Clone: %s\n", repositories.CloneURL)
 }
