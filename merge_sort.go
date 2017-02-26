@@ -19,10 +19,10 @@ func Merge(left, right []int) []int {
 	slice := make([]int, size)
 
 	for k := 0; k < size; k++ {
-		if i > len(left) - 1 && j <= len(right) - 1 {
+		if i > len(left)-1 && j <= len(right)-1 {
 			slice[k] = right[j]
 			j++
-		} else if j > len(right) - 1 && i <= len(left) - 1 {
+		} else if j > len(right)-1 && i <= len(left)-1 {
 			slice[k] = left[i]
 			i++
 		} else if left[i] < right[j] {
