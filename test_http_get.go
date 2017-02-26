@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"os"
 )
-// Repository: info API json from github
+// Repository info API json from github
 type Repository struct {
 	ArchiveURL       string      `json:"archive_url"`
 	AssigneesURL     string      `json:"assignees_url"`
