@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 )
-
-type Repository struct { //json to go
+// Repository: info API json from github
+type Repository struct {
 	ArchiveURL       string      `json:"archive_url"`
 	AssigneesURL     string      `json:"assignees_url"`
 	BlobsURL         string      `json:"blobs_url"`
